@@ -7,10 +7,13 @@ chmod +x check_solution.sh
 java Main < data/sample/1.in
 
 # För att omkompilera igen
+rm *.class
 javac *.java
 
 chmod +x check_solution.sh
 ./check_solution.sh java Main
+
+Den ovan räcker alltså ./check_solution.sh java Main
 
 
 Oral presentation:

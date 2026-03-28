@@ -49,7 +49,7 @@ public class Main {
 
             scanFile.close();
             float endTime = System.nanoTime();
-            System.out.print("Time taken to run the program: " + (endTime - startTime));
+            //System.out.print("Time taken to run the program: " + (endTime - startTime));
 
         } catch (Exception e) {
             System.out.println("Filen hittades inte.");
