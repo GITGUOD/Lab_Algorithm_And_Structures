@@ -1,1 +1,13 @@
-GPS-route
+Hur man använder check_solution:
+
+chmod +x check_solution.sh
+./check_solution.sh java Main
+
+# För att köra 
+java Main < data/sample/1.in
+
+# För att omkompilera igen
+javac *.java
+
+chmod +x check_solution.sh
+./check_solution.sh java Main

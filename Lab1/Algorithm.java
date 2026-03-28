@@ -45,16 +45,18 @@ public class Algorithm {
         for (int i = 1; i < length; i++) {
             int wordIndex = word1.charAt(i);
             word1Letters[wordIndex - 'a']++;
-            System.out.println(word1);
-            System.out.println(wordIndex + " " + Arrays.toString(word1Letters));
+            //debugging
+            // System.out.println(word1);
+            // System.out.println(wordIndex + " " + Arrays.toString(word1Letters));
         }
 
         // Bygga andra ordet
         for (int i = 0; i < length; i++) {
             int wordIndex = word2.charAt(i);
             word2Letters[wordIndex - 'a']++;
-            System.out.println(word2);
-            System.out.println(wordIndex + " " + Arrays.toString(word2Letters));
+            //debugging
+            // System.out.println(word2);
+            // System.out.println(wordIndex + " " + Arrays.toString(word2Letters));
         }
 
         // Om det finns fler bokstäver än den andra, är de inte grannar

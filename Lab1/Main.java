@@ -8,17 +8,19 @@ public class Main {
         try {
             float startTime = System.nanoTime();
             // filnamn
-            // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
-            String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\1small1.in";
-            //String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\2small2.in";
-            //String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\4medium2.in";
+            //String path = "C:\\Users\\tonny\\OneDrive\\Documents\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
+            //String path = "C:\\Users\\tonny\\OneDrive\\Documents\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\6large2.in";
+            //String path = "C:\\Users\\tonny\\OneDrive\\Documents\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\3medium1.in";
 
-            Scanner scanFile = new Scanner(new File(path));
-            System.out.print("Start \n");
+        
+            //Scanner scanFile = new Scanner(new File(path));
+            Scanner scanFile = new Scanner(System.in);
+
+            //System.out.print("Start \n");
             int numberOfWords = scanFile.nextInt();
-            System.out.println("nbrWords " + numberOfWords);
+            //System.out.println("nbrWords " + numberOfWords);
             int pairs = scanFile.nextInt();
-            System.out.println("pairs: " + pairs);
+            //System.out.println("pairs: " + pairs);
 
             scanFile.nextLine();
 
@@ -49,7 +51,7 @@ public class Main {
             float endTime = System.nanoTime();
             System.out.print("Time taken to run the program: " + (endTime - startTime));
 
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             System.out.println("Filen hittades inte.");
             e.printStackTrace();
         }
