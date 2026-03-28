@@ -6,34 +6,37 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
-            // Ange filnamn här
-            String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
+            // filnamn
+            // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
+            // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\1small1.in";
+            // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\2small2.in";
+            String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\4medium2.in";
+
             Scanner scanFile = new Scanner(new File(path));
             System.out.print("Start \n");
-            // 1. Läs in antal ord (N) och antal queries (Q)
-            int N = scanFile.nextInt();
-            int Q = scanFile.nextInt();
-            scanFile.nextLine(); // ta bort newline
+            int numberOfWords = scanFile.nextInt();
+            System.out.println("nbrWords " + numberOfWords);
+            int pairs = scanFile.nextInt();
+            System.out.println("pairs: " + pairs);
 
-            // 2. Läs in orden
-            String[] words = new String[N];
-            for (int i = 0; i < N; i++) {
+            scanFile.nextLine();
+
+            String[] words = new String[numberOfWords]; //Vi vill lägga in orden i inputdatan här
+            for (int i = 0; i < numberOfWords; i++) {
                 words[i] = scanFile.nextLine().trim();
             }
 
-            // 3. Läs in queries
-            String[][] queries = new String[Q][2];
-            for (int i = 0; i < Q; i++) {
+            String[][] queries = new String[pairs][2]; // Samma här fast med paren
+            for (int i = 0; i < pairs; i++) {
                 queries[i][0] = scanFile.next();
                 queries[i][1] = scanFile.next();
             }
 
-            // 4. Bygg grafen
             Algorithm algo = new Algorithm();
-            HashMap<String, List<String>> graph = algo.buildGraph(words);
+            HashMap<String, List<String>> graph = algo.buildGraph(words); // Bygga grafen med orden och dess grannar
 
-            // 5. Kör BFS för varje query
-            for (int i = 0; i < Q; i++) {
+            // 5. bfs
+            for (int i = 0; i < pairs; i++) {
                 String start = queries[i][0];
                 String end = queries[i][1];
 
