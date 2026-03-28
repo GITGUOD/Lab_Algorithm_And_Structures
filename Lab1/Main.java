@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
+            float startTime = System.nanoTime();
             // filnamn
             // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
             String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\1small1.in";
@@ -45,6 +46,8 @@ public class Main {
             }
 
             scanFile.close();
+            float endTime = System.nanoTime();
+            System.out.print("Time taken to run the program: " + (endTime - startTime));
 
         } catch (FileNotFoundException e) {
             System.out.println("Filen hittades inte.");
