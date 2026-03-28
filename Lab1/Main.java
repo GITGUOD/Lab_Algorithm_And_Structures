@@ -8,9 +8,9 @@ public class Main {
         try {
             // filnamn
             // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
-            // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\1small1.in";
-            // String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\2small2.in";
-            String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\4medium2.in";
+            String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\1small1.in";
+            //String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\2small2.in";
+            //String path = "C:\\Users\\Tonny\\OneDrive\\Dokument\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\4medium2.in";
 
             Scanner scanFile = new Scanner(new File(path));
             System.out.print("Start \n");

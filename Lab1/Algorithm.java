@@ -27,12 +27,21 @@ public class Algorithm {
     }
 
     public boolean hasEdge(String word1, String word2) {
+        /*
+            Jämförelse mellan de sista 4 bokstäverna i startordet
+            med alla bokstäver i det andra ordet.
+            T.ex:
+            w1 = hello -> sista fyra = ello, två "l", ett "e" och ett "o"
+            w2 = lolem -> Alla fem = två "l", ett "o", ett "e" och ett "m", vi har ett "m" som skillnad
+            medan alla andra bokstäver finns med, då finns edge med.
+        */
         int length = 5;
         int alphabets = 26;
 
         int[] word1Letters = new int[alphabets];
         int[] word2Letters = new int[alphabets];
 
+        // Bygga första ordet
         for (int i = 1; i < length; i++) {
             int wordIndex = word1.charAt(i);
             word1Letters[wordIndex - 'a']++;
@@ -40,6 +49,7 @@ public class Algorithm {
             System.out.println(wordIndex + " " + Arrays.toString(word1Letters));
         }
 
+        // Bygga andra ordet
         for (int i = 0; i < length; i++) {
             int wordIndex = word2.charAt(i);
             word2Letters[wordIndex - 'a']++;
@@ -47,6 +57,7 @@ public class Algorithm {
             System.out.println(wordIndex + " " + Arrays.toString(word2Letters));
         }
 
+        // Om det finns fler bokstäver än den andra, är de inte grannar
         for (int i = 0; i < alphabets; i++) {
             if (word1Letters[i] > word2Letters[i]) {
                 return false;
@@ -57,7 +68,7 @@ public class Algorithm {
     }
     
 
-    public int bfs(HashMap<String, List<String>> adj, String start, String target) {
+    public int bfs(HashMap<String, List<String>> graph, String start, String target) {
         Queue<String> queue = new LinkedList<>();
         HashMap<String, Integer> dist = new HashMap<>();
 
@@ -71,7 +82,7 @@ public class Algorithm {
                 return dist.get(node);
             }
 
-            for (String neighbor : adj.get(node)) {
+            for (String neighbor : graph.get(node)) {
                 if (!dist.containsKey(neighbor)) {
                     dist.put(neighbor, dist.get(node) + 1);
                     queue.add(neighbor);
