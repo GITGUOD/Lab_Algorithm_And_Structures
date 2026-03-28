@@ -11,3 +11,24 @@ javac *.java
 
 chmod +x check_solution.sh
 ./check_solution.sh java Main
+
+
+Oral presentation:
+
+• How do you represent the problem as a graph, and how is the graph built?
+Answer: Each node in the graph represents a five-letter word. There is a directed edge from word u to word v if the last four letters of u are all present in v (taking into account multiple occurrences of letters). The graph is built by comparing every word to every other word and adding edges according to this rule. 
+Example: Edge from "there" → "where" exists, but "there" → "retch" does not because "e" occurs twice in "there"’s last four letters but only once in "retch".
+
+• If one were to perform backtracking (find the path along which we went), how would that be done?
+Answer: It can be done by utilizing a list of which nodes we visited and then backtrack by looking at the last elements being added using pointers etc. Perhaps a linkedlist where we have nodes.
+
+• What is the time complexity, and more importantly why?
+Answer: Time complexitiy is a theoretical method to sample time or how long it takes for a given section of a code to run, take a method or BFS for example, the more complex the program is if for instance it has a lot of for loops. Then it will have higher time complexity
+
+• Is it possible to solve the problem with DFS: why or why not?
+Answer: Yes it is
+
+• Can you think of any applications of this? Of BFS/DFS in general
+Answer: For searching algorithms, perhaps finding the closest path to a building or whatever:
+BFS: Finding the shortest path in maps, network routing, social networks, or word ladders.
+DFS: Solving mazes or puzzles, exploring all possibilities in a search space.
