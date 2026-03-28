@@ -10,7 +10,6 @@ public class Main {
             // filnamn
             //String path = "C:\\Users\\tonny\\OneDrive\\Documents\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\sample\\1.in";
             //String path = "C:\\Users\\tonny\\OneDrive\\Documents\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\6large2.in";
-            //String path = "C:\\Users\\tonny\\OneDrive\\Documents\\LabbarAlgoritmer\\Lab_Algorithm_And_Structures\\Lab1\\data\\secret\\3medium1.in";
 
         
             //Scanner scanFile = new Scanner(new File(path));

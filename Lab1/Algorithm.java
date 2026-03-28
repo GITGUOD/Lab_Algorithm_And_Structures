@@ -71,19 +71,20 @@ public class Algorithm {
     
 
     public int bfs(HashMap<String, List<String>> graph, String start, String target) {
-        Queue<String> queue = new LinkedList<>();
-        HashMap<String, Integer> dist = new HashMap<>();
+        Queue<String> queue = new LinkedList<>(); // Skapa en kö för BFS
+        HashMap<String, Integer> dist = new HashMap<>(); // Skapa en hash map för att hålla avståndet från startnoden till varje nod
 
         queue.add(start);
-        dist.put(start, 0);
+        dist.put(start, 0); 
 
+        // BFS loop där vi besöker varje nod och dess grannar så länge kön inte är tom
         while (!queue.isEmpty()) {
-            String node = queue.poll();
+            String node = queue.poll(); 
 
             if (node.equals(target)) {
                 return dist.get(node);
             }
-
+            // Gå igenom alla grannar till den aktuella noden
             for (String neighbor : graph.get(node)) {
                 if (!dist.containsKey(neighbor)) {
                     dist.put(neighbor, dist.get(node) + 1);
