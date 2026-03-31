@@ -7,6 +7,7 @@ public class Algorithm {
 
     }
 
+    //Timecmplx = O(N) + O(N^2) = O(N^2) då andra termen dominerar
     public HashMap<String, List<String>> buildGraph(String[] words) {
         HashMap<String, List<String>> list = new HashMap<>();
 
@@ -26,6 +27,7 @@ public class Algorithm {
         return list;
     }
 
+    //Timecmplx = O(1) då vi har konstanter
     public boolean hasEdge(String word1, String word2) {
         /*
             Jämförelse mellan de sista 4 bokstäverna i startordet
@@ -69,7 +71,7 @@ public class Algorithm {
         return true;
     }
     
-
+    //Timecmplx = O(n+m)
     public int bfs(HashMap<String, List<String>> graph, String start, String target) {
         Queue<String> queue = new LinkedList<>(); // Skapa en kö för BFS
         HashMap<String, Integer> dist = new HashMap<>(); // Skapa en hash map för att hålla avståndet från startnoden till varje nod
@@ -77,17 +79,19 @@ public class Algorithm {
         queue.add(start);
         dist.put(start, 0); 
 
+        //Timecmplx = O(antal noder)+O(antal kanter)=O(n+m)
         // BFS loop där vi besöker varje nod och dess grannar så länge kön inte är tom
         while (!queue.isEmpty()) {
-            String node = queue.poll(); 
+            String node = queue.poll(); //O(1) för att ta bort och returnera det första elementet i kön
 
-            if (node.equals(target)) {
+            if (node.equals(target)) { // O(1) för att jämföra noder
                 return dist.get(node);
             }
+
             // Gå igenom alla grannar till den aktuella noden
-            for (String neighbor : graph.get(node)) {
+            for (String neighbor : graph.get(node)) { // O(antal grannar) för att iterera över grannarna
                 if (!dist.containsKey(neighbor)) {
-                    dist.put(neighbor, dist.get(node) + 1);
+                    dist.put(neighbor, dist.get(node) + 1); // O(1) för att lägga till grannen i dist hash map
                     queue.add(neighbor);
                 }
             }
