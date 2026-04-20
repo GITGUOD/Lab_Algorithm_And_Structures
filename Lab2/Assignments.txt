@@ -1,0 +1,81 @@
+Purpose of lab:How different ways of handling collisions affect performance.
+The core problem:
+
+    When you store data in an array using a hash function:
+    key → hash → index
+
+    You get:
+        Best case:
+            Each key goes to a unique spot.
+        Real case:
+            Multiple keys go to the same index.
+
+    That is called collision
+
+1. What are suitable minimum and maximum numbers of key-value pairs compared to array size?¨
+
+What they mean: When should you resize your hash table?
+If we have:
+    - n = numbers of key-value pairs
+    - m = array size
+    we have a = n/m which will be the factor to resize the table
+    If a gets too high:
+
+        too many collisions
+        long chains (or probing steps)
+        slow performance
+
+        If α gets too low:
+
+        wasted memory
+        unnecessary resizing
+
+Assignment 2: If your implementation does not voluntarily reduce the size of the array,
+force it to in order to test that it works!
+
+Answer yes it works, after adding 100 elements, the size increased. And after removing it, the size decreased.
+In other words, Rehashing works
+
+but I dont understand, if there are many collisions, why doesnt the program crash?
+    The program doesn’t crash because linear probing always has a rule for what to do next.
+    Even if there are many collisions, it never “gives up” — it just keeps searching.
+
+Assignment 8:
+| Implementation      | Performance (avg runtime) | Stability         
+| ------------------- | ------------------------- | ------------------
+| reference.py (dict) | Fastest (O(1) avg)        | Very stable        
+| Linear probing      | Slower, variable          | Unstable at high α          
+| Quadratic probing   | Faster than linear        | More stable       
+
+reference/Main.java
+addis
+addi
+mflr
+std
+stdu
+std
+mr
+li
+li
+std
+
+^Z //control z + enter för att avsluta programmet
+std 3
+
+Assignment 10:
+% n = “gör en division och ta resten”
+& (n-1) = “ta bara de sista bitarna”
+
+Det funkar bara om n är en tvåpotens:
+    8, 16, 32, 64
+    10, 12, 100 (funkar inte)
+
+Om tabellstorleken är en tvåpotens kan modulo ersättas med bitvis AND (i & (n - 1)),
+vilket ger samma resultat men är snabbare eftersom det undviker division.
+
+Detta för att: i & (n - 1)
+
+CPUn gör bara:
+    jämför bitar (0/1)
+    AND-operation
+Vilket är mycket enklare logik än att dividera
