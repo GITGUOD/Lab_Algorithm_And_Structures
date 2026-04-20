@@ -30,7 +30,7 @@ public class SeparateChainingHashTable {
 
     // Assignment 5: add method to get current size (number of key-value pairs) and refactoring it depending on its length
     private int hash(String key) {
-        return (key.hashCode() & 0x7fffffff) % table.length; // allow negative for testing purposes, to check that we handle it correctly
+        return (key.hashCode() & 0x7fffffff) % table.length;
     
     }
 

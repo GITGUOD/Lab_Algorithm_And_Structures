@@ -12,7 +12,14 @@ The core problem:
 
     That is called collision
 
-1. What are suitable minimum and maximum numbers of key-value pairs compared to array size?¨
+Assignment 3:
+The easiest to implement is separate chaining so start with that. Start with
+an array with one element and adjust its size as needed, i.e. make the array
+bigger and smaller depending on the number of key-value pairs in your
+hash table.
+Answer: The purpose: “Gå till rätt bucket och hantera alla kollisioner i en kedja, och ändra storleken på tabellen när den blir för full eller för tom.”
+
+4. What are suitable minimum and maximum numbers of key-value pairs compared to array size?¨
 
 What they mean: When should you resize your hash table?
 If we have:
@@ -30,7 +37,7 @@ If we have:
         wasted memory
         unnecessary resizing
 
-Assignment 2: If your implementation does not voluntarily reduce the size of the array,
+Assignment 5: If your implementation does not voluntarily reduce the size of the array,
 force it to in order to test that it works!
 
 Answer yes it works, after adding 100 elements, the size increased. And after removing it, the size decreased.
