@@ -1,0 +1,7 @@
+Labbar:
+    DFS/BFS
+    Hashtables
+    Kruskal algorithm/MIT
+    Tidskomplexitet/Rekursion
+    Needleman-Wunsch Sequence Alignment
+    Dinic/Folken fork's Algorithm/ Edmond Karp
